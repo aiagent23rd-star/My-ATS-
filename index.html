@@ -311,7 +311,206 @@ footer {
             </button>
 
         </form>
+    </div><!-- PAYMENT SECTION -->
+<div class="card payment-card">
+
+    <h2>💳 Make Your Payment</h2>
+
+    <p>
+        Choose your resume package below and make payment through OPay.
+        After payment, send your payment confirmation through WhatsApp.
+    </p>
+
+    <div class="payment-method">
+        <h3>📱 OPay Payment</h3>
+
+        <p><strong>OPay Account Name:</strong> YOUR NAME</p>
+        <p><strong>OPay Account Number:</strong> YOUR OPAY NUMBER</p>
+
+        <p class="payment-note">
+            ⚠️ Please make sure the account name is correct before sending payment.
+        </p>
     </div>
+
+    <h3>💰 Select Your Package</h3>
+
+    <div class="payment-packages">
+
+        <div class="payment-box">
+            <h3>Basic</h3>
+            <div class="payment-price">₦5,000</div>
+            <p>Professional ATS-friendly resume.</p>
+
+            <a
+                href="https://wa.me/YOURWHATSAPPNUMBER?text=Hello%20My-ATS,%20I%20want%20the%20Basic%20Resume%20Package%20for%20₦5,000."
+                class="payment-button">
+                Pay ₦5,000
+            </a>
+        </div>
+
+        <div class="payment-box featured">
+            <div class="popular">POPULAR</div>
+
+            <h3>Standard</h3>
+            <div class="payment-price">₦10,000</div>
+            <p>ATS-optimized professional resume.</p>
+
+            <a
+                href="https://wa.me/YOURWHATSAPPNUMBER?text=Hello%20My-ATS,%20I%20want%20the%20Standard%20Resume%20Package%20for%20₦10,000."
+                class="payment-button">
+                Pay ₦10,000
+            </a>
+        </div>
+
+        <div class="payment-box">
+            <h3>Premium</h3>
+            <div class="payment-price">₦20,000</div>
+            <p>Premium resume writing service.</p>
+
+            <a
+                href="https://wa.me/YOURWHATSAPPNUMBER?text=Hello%20My-ATS,%20I%20want%20the%20Premium%20Resume%20Package%20for%20₦20,000."
+                class="payment-button">
+                Pay ₦20,000
+            </a>
+        </div>
+
+    </div>
+
+    <div class="payment-steps">
+
+        <h3>✅ How To Complete Your Order</h3>
+
+        <p><strong>1.</strong> Choose your resume package.</p>
+
+        <p><strong>2.</strong> Send the correct amount to the OPay account above.</p>
+
+        <p><strong>3.</strong> Take a screenshot of your payment receipt.</p>
+
+        <p><strong>4.</strong> Click the button below and send your receipt on WhatsApp.</p>
+
+    </div>
+
+    <a
+        href="https://wa.me/YOURWHATSAPPNUMBER?text=Hello%20My-ATS,%20I%20have%20made%20payment%20for%20my%20resume.%20I%20will%20send%20my%20payment%20receipt%20and%20resume%20details."
+        class="confirm-payment">
+        📲 I've Made Payment — Send Receipt
+    </a>
+
+    <p class="payment-warning">
+        🔒 Do not send your OPay PIN, password, OTP, or other banking security information.
+    </p>
+
+</div>
+
+<style>
+.payment-card {
+    border-top: 5px solid #0056d6;
+}
+
+.payment-method {
+    background: #f1f7ff;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+    border: 1px solid #d7e7ff;
+}
+
+.payment-method h3 {
+    color: #0056d6;
+    margin-top: 0;
+}
+
+.payment-note {
+    color: #b45309;
+    font-size: 14px;
+}
+
+.payment-packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.payment-box {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.payment-box h3 {
+    color: #0056d6;
+}
+
+.payment-box.featured {
+    border: 2px solid #0056d6;
+}
+
+.popular {
+    background: #0056d6;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+}
+
+.payment-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.payment-button {
+    display: block;
+    background: #0056d6;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.payment-button:hover {
+    opacity: 0.9;
+}
+
+.payment-steps {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.confirm-payment {
+    display: block;
+    background: #16a34a;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.payment-warning {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+    .payment-packages {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
 
     <div class="card contact">
         <h2>Contact My-ATS</h2>
