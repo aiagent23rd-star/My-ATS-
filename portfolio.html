@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My-ATS Portfolio | Sample Resume</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #1a6b3c;
+    --green-light: #e8f5ee;
+    --green-mid: #2d9158;
+    --ink: #1c1c1c;
+    --muted: #5a5a5a;
+    --border: #d4e6da;
+    --bg: #f7faf8;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── PORTFOLIO HEADER ── */
+  .portfolio-header {
+    background: var(--green);
+    color: white;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+
+  .portfolio-header .brand {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #a8d5bc;
+    margin-bottom: 12px;
+  }
+
+  .portfolio-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 5vw, 40px);
+    line-height: 1.2;
+    margin-bottom: 14px;
+  }
+
+  .portfolio-header p {
+    color: #c5e8d4;
+    max-width: 480px;
+    margin: 0 auto 28px;
+    font-size: 14px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: white;
+    color: var(--green);
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-secondary {
+    border: 1.5px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* ── SKILLS SECTION ── */
+  .skills-section {
+    padding: 48px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green-mid);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    color: var(--ink);
+    margin-bottom: 24px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .skill-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .skill-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--green-light);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .skill-item h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+
+  .skill-item p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── SAMPLE RESUME SECTION ── */
+  .sample-section {
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 48px 24px;
+  }
+
+  .sample-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .sample-badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── RESUME CARD ── */
+  .resume-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 24px;
+    box-shadow: 0 2px 12px rgba(26,107,60,0.07);
+  }
+
+  .resume-top {
+    background: var(--green);
+    color: white;
+    padding: 28px 28px 24px;
+  }
+
+  .resume-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 4vw, 28px);
+    margin-bottom: 4px;
+  }
+
+  .resume-title {
+    font-size: 13px;
+    color: #a8d5bc;
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .resume-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .resume-contact-item {
+    font-size: 12px;
+    color: #c5e8d4;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .resume-body {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 560px) {
+    .resume-body {
+      grid-template-columns: 1fr 280px;
+    }
+  }
+
+  .resume-section-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1.5px solid var(--green-light);
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+  }
+
+  .resume-summary {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .job-entry {
+    margin-bottom: 18px;
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 3px;
+  }
+
+  .job-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .job-date {
+    font-size: 11px;
+    color: var(--green-mid);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .job-company {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .job-bullets {
+    list-style: none;
+    padding: 0;
+  }
+
+  .job-bullets li {
+    font-size: 12px;
+    color: var(--muted);
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .job-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-size: 10px;
+    top: 2px;
+  }
+
+  /* Sidebar */
+  .resume-sidebar {
+    border-left: 1px solid var(--border);
+    padding-left: 20px;
+  }
+
+  @media (max-width: 559px) {
+    .resume-sidebar {
+      border-left: none;
+      border-top: 1px solid var(--border);
+      padding-left: 0;
+      padding-top: 20px;
+    }
+  }
+
+  .sidebar-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .skill-tag {
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 9px;
+    border-radius: 4px;
+  }
+
+  .edu-entry {
+    margin-bottom: 14px;
+  }
+
+  .edu-degree {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .edu-school {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .edu-year {
+    font-size: 11px;
+    color: var(--green-mid);
+  }
+
+  .ats-badge {
+    background: var(--green-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .ats-badge p {
+    font-size: 11px;
+    color: var(--green);
+    font-weight: 600;
+  }
+
+  .ats-badge span {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* ── PACKAGES SECTION ── */
+  .packages-section {
+    padding: 48px 24px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .pkg-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 16px;
+    background: white;
+    text-align: center;
+  }
+
+  .pkg-card.featured {
+    border-color: var(--green);
+    background: var(--green);
+    color: white;
+  }
+
+  .pkg-name {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .pkg-card.featured .pkg-name { color: white; }
+
+  .pkg-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+
+  .pkg-card.featured .pkg-price { color: #a8d5bc; }
+
+  .pkg-features {
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .pkg-card.featured .pkg-features { color: #c5e8d4; }
+
+  .pkg-features li {
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .pkg-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--green-mid);
+    font-weight: 700;
+  }
+
+  .pkg-card.featured .pkg-features li::before { color: #a8d5bc; }
+
+  .pkg-btn {
+    display: block;
+    background: var(--green);
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .pkg-card.featured .pkg-btn {
+    background: white;
+    color: var(--green);
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--ink);
+    color: #aaa;
+    text-align: center;
+    padding: 28px 24px;
+    font-size: 13px;
+  }
+
+  .footer a { color: #a8d5bc; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<!-- PORTFOLIO HEADER -->
+<header class="portfolio-header">
+  <p class="brand">MY-ATS · PROFESSIONAL RESUME WRITING</p>
+  <h1>Resumes That Get Past<br>the ATS Filter</h1>
+  <p>See a real sample of what we deliver — then order yours today.</p>
+  <div class="cta-group">
+    <a href="https://aiagent23rd-star.github.io/My-ATS-/?v=2" class="btn-primary">Order Your Resume</a>
+    <a href="https://wa.me/2349067482591" class="btn-secondary">WhatsApp Us</a>
+  </div>
+</header>
+
+<!-- SKILLS SECTION -->
+<section class="skills-section">
+  <p class="section-label">WHY MY-ATS</p>
+  <h2 class="section-title">What makes our resumes different</h2>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <div class="skill-icon">🎯</div>
+      <div>
+        <h3>ATS Optimized</h3>
+        <p>Keyword-rich formatting that passes automated screening systems</p>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">📋</div>
+      <div>
+        <h3>Clean Structure</h3>
+        <p>Clear sections recruiters scan in under 10 seconds</p>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">✍️</div>
+      <div>
+        <h3>Professional Copy</h3>
+        <p>Strong action verbs and measurable achievements</p>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">⚡</div>
+      <div>
+        <h3>Fast Delivery</h3>
+        <p>Your resume delivered within 24–48 hours of payment</p>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">🇳🇬</div>
+      <div>
+        <h3>Nigeria Focused</h3>
+        <p>Built for Nigerian job market standards and recruiters</p>
+      </div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">🔄</div>
+      <div>
+        <h3>Free Revision</h3>
+        <p>One free revision included with every package</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE RESUME -->
+<section class="sample-section">
+  <div class="sample-inner">
+    <p class="section-label">SAMPLE WORK</p>
+    <span class="sample-badge">✦ Real example of what you receive</span>
+    <h2 class="section-title">Senior Admin & Customer Service Resume</h2>
+
+    <div class="resume-card">
+      <!-- Resume Header -->
+      <div class="resume-top">
+        <div class="resume-name">Chioma Okafor</div>
+        <div class="resume-title">Senior Customer Service & Administrative Manager</div>
+        <div class="resume-contacts">
+          <span class="resume-contact-item">📧 chioma.okafor@email.com</span>
+          <span class="resume-contact-item">📱 +234 801 234 5678</span>
+          <span class="resume-contact-item">📍 Lagos, Nigeria</span>
+          <span class="resume-contact-item">💼 LinkedIn: /in/chiomaokafor</span>
+        </div>
+      </div>
+
+      <!-- Resume Body -->
+      <div class="resume-body">
+        <!-- Main Column -->
+        <div class="resume-main">
+          <!-- Summary -->
+          <div class="resume-section-title">Professional Summary</div>
+          <p class="resume-summary">
+            Results-driven Senior Administrative and Customer Service professional with 7+ years of experience managing high-volume client interactions, leading cross-functional teams, and streamlining office operations across financial services and telecommunications sectors in Nigeria. Proven ability to reduce complaint resolution time by 40% and improve customer satisfaction scores through process improvement and team coaching.
+          </p>
+
+          <!-- Experience -->
+          <div class="resume-section-title">Work Experience</div>
+
+          <div class="job-entry">
+            <div class="job-header">
+              <span class="job-title">Customer Service Team Lead</span>
+              <span class="job-date">Mar 2021 – Present</span>
+            </div>
+            <div class="job-company">Zenith Bank Plc · Lagos, Nigeria</div>
+            <ul class="job-bullets">
+              <li>Supervised a team of 12 customer service representatives handling 500+ daily inquiries across digital and in-branch channels</li>
+              <li>Reduced average complaint resolution time from 72 hours to 43 hours through SOP redesign and staff retraining</li>
+              <li>Achieved 94% customer satisfaction rating for three consecutive quarters (2022–2023)</li>
+              <li>Coordinated onboarding and training for 18 new hires across two branch locations</li>
+            </ul>
+          </div>
+
+          <div class="job-entry">
+            <div class="job-header">
+              <span class="job-title">Administrative Officer</span>
+              <span class="job-date">Jun 2018 – Feb 2021</span>
+            </div>
+            <div class="job-company">MTN Nigeria Communications Plc · Abuja, Nigeria</div>
+            <ul class="job-bullets">
+              <li>Managed scheduling, correspondence, and logistics for a department of 35 staff members</li>
+              <li>Implemented a digital document management system that cut retrieval time by 60%</li>
+              <li>Processed vendor invoices and purchase orders worth ₦15M+ monthly with zero audit exceptions</li>
+              <li>Served as point of contact for escalated customer complaints, resolving 95% without management escalation</li>
+            </ul>
+          </div>
+
+          <div class="job-entry">
+            <div class="job-header">
+              <span class="job-title">Customer Service Representative</span>
+              <span class="job-date">Aug 2016 – May 2018</span>
+            </div>
+            <div class="job-company">Interswitch Group · Lagos, Nigeria</div>
+            <ul class="job-bullets">
+              <li>Handled inbound and outbound calls for fintech transaction disputes and account inquiries</li>
+              <li>Consistently ranked in top 10% of team for call quality scores and first-call resolution rate</li>
+              <li>Assisted in training 6 new representatives during onboarding cycles</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="resume-sidebar">
+          <!-- ATS Score -->
+          <div class="ats-badge">
+            <span>96%</span>
+            <p>ATS Compatibility Score</p>
+          </div>
+
+          <!-- Skills -->
+          <div style="margin-top: 24px;">
+            <div class="resume-section-title">Core Skills</div>
+            <div class="sidebar-skills">
+              <span class="skill-tag">CRM Systems</span>
+              <span class="skill-tag">Team Leadership</span>
+              <span class="skill-tag">Conflict Resolution</span>
+              <span class="skill-tag">MS Office Suite</span>
+              <span class="skill-tag">Report Writing</span>
+              <span class="skill-tag">Process Improvement</span>
+              <span class="skill-tag">Data Entry</span>
+              <span class="skill-tag">Scheduling</span>
+              <span class="skill-tag">Customer Retention</span>
+              <span class="skill-tag">SLA Management</span>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div style="margin-top: 24px;">
+            <div class="resume-section-title">Education</div>
+            <div class="edu-entry">
+              <div class="edu-degree">B.Sc. Business Administration</div>
+              <div class="edu-school">University of Lagos</div>
+              <div class="edu-year">2016 · Second Class Upper</div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div style="margin-top: 20px;">
+            <div class="resume-section-title">Certifications</div>
+            <div class="edu-entry">
+              <div class="edu-degree">Customer Service Excellence</div>
+              <div class="edu-school">CIPM Nigeria</div>
+              <div class="edu-year">2022</div>
+            </div>
+            <div class="edu-entry">
+              <div class="edu-degree">Office Administration Professional</div>
+              <div class="edu-school">Lagos Business School</div>
+              <div class="edu-year">2020</div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div style="margin-top: 20px;">
+            <div class="resume-section-title">Languages</div>
+            <div style="font-size: 12px; color: var(--muted);">
+              <div style="margin-bottom: 4px;">English — Fluent</div>
+              <div style="margin-bottom: 4px;">Yoruba — Native</div>
+              <div>Igbo — Conversational</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section">
+  <p class="section-label">PRICING</p>
+  <h2 class="section-title">Choose your package</h2>
+  <div class="packages-grid">
+    <div class="pkg-card">
+      <div class="pkg-name">Basic</div>
+      <div class="pkg-price">₦5,000</div>
+      <ul class="pkg-features">
+        <li>ATS-friendly resume</li>
+        <li>Professional formatting</li>
+        <li>Keyword optimization</li>
+        <li>1 free revision</li>
+        <li>Delivered in 24hrs</li>
+      </ul>
+      <a href="https://wa.me/2349067482591?text=Hello%20My-ATS,%20I%20want%20the%20Basic%20Package%20for%20₦5,000." class="pkg-btn">Order Basic</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-name">Standard ⭐</div>
+      <div class="pkg-price">₦10,000</div>
+      <ul class="pkg-features">
+        <li>Everything in Basic</li>
+        <li>LinkedIn summary</li>
+        <li>Cover letter</li>
+        <li>2 free revisions</li>
+        <li>Delivered in 24hrs</li>
+      </ul>
+      <a href="https://wa.me/2349067482591?text=Hello%20My-ATS,%20I%20want%20the%20Standard%20Package%20for%20₦10,000." class="pkg-btn">Order Standard</a>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-name">Premium</div>
+      <div class="pkg-price">₦20,000</div>
+      <ul class="pkg-features">
+        <li>Everything in Standard</li>
+        <li>Full LinkedIn profile</li>
+        <li>Interview prep tips</li>
+        <li>Unlimited revisions</li>
+        <li>Priority delivery</li>
+      </ul>
+      <a href="https://wa.me/2349067482591?text=Hello%20My-ATS,%20I%20want%20the%20Premium%20Package%20for%20₦20,000." class="pkg-btn">Order Premium</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 My-ATS · Professional Resume Writing for Nigerian Job Seekers</p>
+  <p style="margin-top: 8px;">
+    <a href="https://aiagent23rd-star.github.io/My-ATS-/?v=2">Main Website</a> ·
+    <a href="https://wa.me/2349067482591">WhatsApp: 09067482591</a>
+  </p>
+</footer>
+
+</body>
+</html>
